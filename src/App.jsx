@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react'
+import {useState } from 'react'
 import './App.css'
 import Select from 'react-select'
+import List from './Components/List'
 function App() {
 
   const options = [
@@ -33,14 +34,15 @@ function App() {
   return (
     <>
       <Select
-
         options={[{ label: "All", value: "All" }, ...options]}
         onChange={handleChange}
         selectedOption={selectedOption}
         isMulti
         value={selectedOption}
-
       />
+      
+      <List selectedOption={selectedOption}></List>
+
     </>
   )
 }
